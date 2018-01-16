@@ -35,6 +35,8 @@ public class Main {
 		//Obje tipimizde bir arraylist oluşturuyoruz
 		List<Invoice> InvoiceList = new ArrayList<Invoice>();
 		
+		
+		
 		//Base Urlimi veriyoruz
 		String serviceUrl = "http://services.odata.org/V2/Northwind/Northwind.svc";
 		
