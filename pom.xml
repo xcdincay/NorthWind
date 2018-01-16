@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>NorthWind</groupId>
+  <artifactId>NorthWind</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Plugin Versions -->
+    <version.compiler-plugin>2.3.2</version.compiler-plugin>
+    <version.deploy-plugin>2.8.1</version.deploy-plugin>
+    <version.eclipse-plugin>2.9</version.eclipse-plugin>
+    <version.jetty-plugin>8.1.14.v20131031</version.jetty-plugin>
+    <!-- Dependency Versions -->
+    <version.cxf>2.7.6</version.cxf>
+    <version.servlet-api>2.5</version.servlet-api>
+    <version.jaxrs-api>2.0-m10</version.jaxrs-api>
+    <version.slf4j>1.7.1</version.slf4j>
+    <version.olingo>2.0.0</version.olingo>
+  </properties>
+  
+  
+   <dependencies>
+    <!-- Apache Olingo Library dependencies -->
+    <dependency>
+      <groupId>org.apache.olingo</groupId>
+      <artifactId>olingo-odata2-api</artifactId>
+      <version>${version.olingo}</version>
+    </dependency>
+    <dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.2.4</version>
+</dependency>
+    <dependency>
+      <artifactId>olingo-odata2-api-annotation</artifactId>
+      <groupId>org.apache.olingo</groupId>
+      <type>jar</type>
+      <version>${version.olingo}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.olingo</groupId>
+      <artifactId>olingo-odata2-core</artifactId>
+      <version>${version.olingo}</version>
+    </dependency>
+    <!-- Apache Olingo Annotation Processor Extension dependencies -->
+    <dependency>
+      <groupId>org.apache.olingo</groupId>
+      <artifactId>olingo-odata2-annotation-processor-api</artifactId>
+      <version>${version.olingo}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.olingo</groupId>
+      <artifactId>olingo-odata2-annotation-processor-core</artifactId>
+      <version>${version.olingo}</version>
+    </dependency>
+    <!-- Additional dependencies -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${version.slf4j}</version>
+    </dependency>
+    <!-- Servlet/REST dependencies -->
+   
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>${version.jaxrs-api}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+      <version>${version.cxf}</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
